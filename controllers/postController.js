@@ -34,6 +34,19 @@ postController.allPostbyUserId= async (req,res) =>{
         res.json({error:error.message})
     }
 }
+///////// Get one Post/////////////
+postController.onePost = async (req,res) => {
+    try {
+        const post = await models.post.fineOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.json({post})
+    } catch (error) {
+        res.json({error:error.message})
+    }
+}
 
 
 ///////Post Update/////////
