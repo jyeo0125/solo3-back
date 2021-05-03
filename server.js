@@ -10,6 +10,9 @@ app.use(require('cors')())
 const userRoutes = require('./routes/userRoutes')
 app.use('/users', userRoutes)
 
+const postRoutes = require('./routes/postRoutes')
+app.use('/posts', postRoutes)
+
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);
