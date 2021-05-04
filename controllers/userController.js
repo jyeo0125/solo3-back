@@ -1,5 +1,7 @@
 const e = require('express')
 const models = require('../models')
+require('dotenv').config()
+const jwt = require('jsonwebtoken')
 
 const userController = {}
 
@@ -10,6 +12,7 @@ userController.creatUser = async (req, res) =>{
             email:req.body.email,
             password:req.body.password
         })
+        
         res.json({user})
     } catch (error) {
         console.log(error)

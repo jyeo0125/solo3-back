@@ -1,5 +1,6 @@
 const models = require('../models')
 const postController = {}
+
 //////Create Post After Login//////
 postController.create = async (req, res) =>{
     try {
